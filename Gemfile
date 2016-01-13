@@ -48,4 +48,5 @@ group :development do
 end
 
 gem 'abcjs-rails'
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
+gem 'mysql2'

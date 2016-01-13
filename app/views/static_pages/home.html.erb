@@ -6,16 +6,24 @@
       </section>
     </aside>
     <div class="col-md-7 bg-F7F7F7">
-      <h3>Main Contents</h3>
-      <%= render 'shared/abc_edit' %>
+      <%= render 'shared/abc_paper' %>
     </div>
     <div class="col-md-3">
-      <h3>Main Contents</h3>
+      <%= render 'shared/abc_edit' %>
     </div>
   </div>
+  <script>initMeter("");</script>
+  <script>initLength("");</script>
+  <script>initKey("");</script>
+  <script>updateAbcArea()</script>
+  <script type="text/javascript">
+    window.onload = function() {
+      abc_editor = new ABCJS.Editor("area", { paper_id: "paper0", warnings_id:"warnings" });
+    }
+  </script>
 <% else %>
   <div class="center jumbotron">
-    <h1>Welcome to the Phrasen</h1>
+    <h1>Welcome to the Noten</h1>
 
     <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
   </div>

@@ -1,8 +1,25 @@
-<div id="warnings"></div>
-<div id="paper0"></div>
-<textarea class="area" id="area" cols="80" rows="8"></textarea>
-<script type="text/javascript">
-  window.onload = function() {
-    abc_editor = new ABCJS.Editor("area", { paper_id: "paper0", warnings_id:"warnings" });
-  }
-</script>
+<%= form_for(@phrase) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <%= f.label :tytle %>
+  <%= f.text_field :tytle, class: 'form-control' %>
+
+  <%= f.label :meter %>
+  <%= f.select :meter, [], {}, { class: 'form-control' } %>
+
+  <%= f.label :length %>
+  <%= f.select :length, [], {}, { class: 'form-control' } %>
+
+  <%= f.label :reference %>
+  <%= f.text_field :reference, class: 'form-control' %>
+
+  <%= f.label :key %>
+  <%= f.select :key, [], {}, { class: 'form-control' } %>
+
+  <%= f.label :abc, "ABC" %>
+  <%= f.text_area :abc, rows: "8", cols: "80", class: "form-control" %>
+
+  <%= f.submit "Update", class: "btn btn-large btn-primary" %>
+<% end %>
+
+<%= text_area_tag "area", nil, class: "area" %>

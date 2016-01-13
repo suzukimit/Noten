@@ -11,16 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160109101503) do
+ActiveRecord::Schema.define(version: 20160111114531) do
 
-  create_table "users", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+  create_table "abc_phrases", force: :cascade do |t|
+    t.integer  "user_id",    limit: 4
+    t.string   "tytle",      limit: 255
+    t.string   "meter",      limit: 255
+    t.string   "length",     limit: 255
+    t.string   "reference",  limit: 255
+    t.string   "key",        limit: 255
+    t.string   "abc",        limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "abc_phrases", ["user_id", "created_at"], name: "index_abc_phrases_on_user_id_and_created_at", using: :btree
+  add_index "abc_phrases", ["user_id"], name: "index_abc_phrases_on_user_id", using: :btree
 
+  create_table "users", force: :cascade do |t|
+    t.string   "name",            limit: 255
+    t.string   "email",           limit: 255
+    t.string   "password_digest", limit: 255
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+
+  add_foreign_key "abc_phrases", "users"
 end

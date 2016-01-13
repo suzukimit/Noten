@@ -70,6 +70,10 @@ p {
   font-weight: bold;
 }
 
+header.mb-0 {
+  margin-bottom: 0;
+}
+
 #logo:hover {
   color: #fff;
   text-decoration: none;
@@ -141,4 +145,10 @@ aside {
       margin-top: 0px;
     }
   }
+}
+
+/* edit */
+
+textarea.area {
+  display:none;
 }

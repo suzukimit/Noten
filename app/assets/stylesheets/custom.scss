@@ -4,7 +4,7 @@
 /* universal */
 
 body {
-  padding-top: 60px;
+  height: 100%;
 }
 
 section {
@@ -122,7 +122,7 @@ input {
 /* sidebar */
 
 aside {
-  section.user_info {
+  section.phrase_list {
     margin-top: 20px;
   }
   section {
@@ -145,6 +145,12 @@ aside {
       margin-top: 0px;
     }
   }
+}
+
+/* paper */
+
+#abc-paper {
+  height: 500px;
 }
 
 /* edit */

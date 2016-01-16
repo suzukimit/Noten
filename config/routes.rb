@@ -9,5 +9,5 @@ Rails.application.routes.draw do
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-  resources :abc_phrases, only: [:create, :update, :destroy]
+  resources :abc_phrases, only: [:show, :create, :update, :destroy]
 end

@@ -1,0 +1,8 @@
+<% @phrases.each do |phrase| %>
+  <div class="col-md-12">
+    <%= link_to phrase.tytle, abc_phrase_path(phrase),
+                #:class => "want-#{item.get('ASIN')} btn-want btn btn-danger btn-sm want",
+                :remote => true,
+                :method => :get %>
+  </div>
+<% end %>

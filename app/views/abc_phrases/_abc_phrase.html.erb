@@ -1,5 +1,12 @@
 <div class="col-md-12">
-  <%= link_to abc_phrase.tytle, abc_phrase_path(abc_phrase),
-              :remote => true,
-              :method => :get %>
+  <div class="col-md-12">
+    <%= link_to abc_phrase.tytle, abc_phrase, remote: true, method: :get %>
+  </div>
+  <div class="col-md-12">
+    <%= link_to abc_phrase, method: :delete, remote: true, data: { confirm: "You sure?" } do %>
+      <%= button_tag class: "btn btn-warning" do %>
+        <span class="glyphicon glyphicon-trash"></span>
+      <% end %>
+    <% end %>
+  </div>
 </div>

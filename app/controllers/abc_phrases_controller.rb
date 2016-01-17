@@ -18,7 +18,6 @@ class AbcPhrasesController < ApplicationController
   def update
     @phrase = AbcPhrase.find(params[:id])
     if @phrase.update(abc_params)
-      flash[:success] = "Save succeed!"
       redirect_to root_url
     else
       render 'static_pages/home'
@@ -28,6 +27,14 @@ class AbcPhrasesController < ApplicationController
   # GET abc_phrases/:id
   def show
     @phrase = AbcPhrase.find(params[:id])
+  end
+
+  # DELETE abc_phrases
+  def destroy
+    @phrase = AbcPhrase.find_by(id: params[:id])
+    return redirect_to root_url if @phrase.nil?
+    @phrase.destroy
+    redirect_to root_url
   end
 
   private

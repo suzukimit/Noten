@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   post   'login' , to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
 
+  #TODO ここ何とかしたい。もう少しスマートにできないものか？
+  post   'abc_phrases/:id' , to: 'abc_phrases#update'
+
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :abc_phrases, only: [:show, :create, :update, :destroy]

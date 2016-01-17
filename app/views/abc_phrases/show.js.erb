@@ -1,7 +1,12 @@
+//init edit form
 $('#abc_phrase_tytle').val('<%= @phrase.tytle %>');
 $('#abc_phrase_meter').val('<%= @phrase.meter %>');
 $('#abc_phrase_length').val('<%= @phrase.length %>');
 $('#abc_phrase_reference').val('<%= @phrase.reference %>');
 $('#abc_phrase_key').val('<%= @phrase.key %>');
 $('#abc_phrase_abc').text('<%= @phrase.abc %>');
+
+//change post url of edit form
+$('#new_abc_phrase').attr('action', '/abc_phrases/' + <%= @phrase.id %>);
+
 updateAbcArea();

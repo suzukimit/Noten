@@ -1,1 +1,4 @@
-$('#abc_phrase_id_<%= @phrase.id %>').remove();
+var tgt   = $('#abc_phrase_id_<%= @phrase.id %>');
+var below = $('#abc_phrase_id_<%= @phrase.id %> + div:first a:first');
+tgt.remove();
+below.click();

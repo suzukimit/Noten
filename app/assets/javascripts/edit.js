@@ -11,15 +11,12 @@ function updateAbcArea() {
 	$('#area').trigger('change');
 }
 
-function switchFowardUrl() {
-	var url = location.href;
-	var sub = url.length - 'create'.length;
-	var isCreate = (sub >= 0) && (url.lastIndexOf('create') === sub);
-	if (isCreate) {
-		$('#submit').attr('value', 'Create');
-		$('form.edit').attr('action', 'create');
-	}
+//一番上の楽譜を表示させる
+//TODO 無理やりボタン押してajaxってな感じだけど、もうちょいスマートにやりたい
+function showTopPhrase() {
+  $('#phrase_list div:first a:first').click()
 }
+
 
 //イベントリスナの登録
 $(function(){

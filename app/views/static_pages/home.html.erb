@@ -1,8 +1,8 @@
 <% if logged_in? %>
   <div class="row">
     <aside class="col-md-2">
-      <section class="phrase_list">
-        <%= render 'shared/phrase_list' %>
+      <section class="phrase_list" id="phrase_list">
+        <%= render @phrases %>
       </section>
     </aside>
     <div class="col-md-7 bg-F7F7F7" id="abc-paper">

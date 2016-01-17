@@ -2,13 +2,17 @@ class AbcPhrasesController < ApplicationController
   before_action :logged_in_user, only: [:create]
 
   def create
-    @phrase = current_user.abc_phrases.build(abc_params)
-    if @phrase.save
-      flash[:success] = "New phrase has created!"
-      redirect_to root_url
-    else
-      render 'static_pages/home'
-    end
+    redirect_to root_url if !logged_in?
+    #TODO: createに失敗した場合はalertを出す
+    @phrase = AbcPhrase.create(
+                              user_id: session[:user_id],
+                              tytle: "new",
+                              meter: "4/4",
+                              length: "1/8",
+                              reference: "",
+                              key: "C",
+                              abc: "c"
+                              )
   end
 
   def update

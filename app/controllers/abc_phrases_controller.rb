@@ -34,7 +34,6 @@ class AbcPhrasesController < ApplicationController
     @phrase = AbcPhrase.find_by(id: params[:id])
     return redirect_to root_url if @phrase.nil?
     @phrase.destroy
-    redirect_to root_url
   end
 
   private

@@ -1,8 +1,7 @@
 class AbcPhrasesController < ApplicationController
-  before_action :logged_in_user, only: [:create]
+  before_action :reject_not_logged_in_user
 
   def create
-    redirect_to root_url if !logged_in?
     #TODO: createに失敗した場合はalertを出す
     @phrase = AbcPhrase.create(
                               user_id: session[:user_id],
@@ -20,6 +19,7 @@ class AbcPhrasesController < ApplicationController
     if @phrase.update(abc_params)
       redirect_to root_url
     else
+      @phrases  = AbcPhrase.where(user_id: current_user).order(updated_at: :desc)
       render 'static_pages/home'
     end
   end

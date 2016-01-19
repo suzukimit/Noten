@@ -6,5 +6,5 @@ class AbcPhrase < ActiveRecord::Base
   validates :length,    presence: true
   validates :reference,                 length: {maximum: 200}
   validates :key,       presence: true
-  validates :abc,       presence: true, length: {maximum: 300}
+  validates :abc,       presence: true, length: {maximum: 10000}
 end

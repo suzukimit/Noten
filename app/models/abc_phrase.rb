@@ -1,7 +1,7 @@
 class AbcPhrase < ActiveRecord::Base
   belongs_to :user
   validates :user_id,   presence: true
-  validates :tytle,     presence: true, length: {maximum: 100}
+  validates :title,     presence: true, length: {maximum: 100}
   validates :meter,     presence: true
   validates :length,    presence: true
   validates :reference,                 length: {maximum: 200}

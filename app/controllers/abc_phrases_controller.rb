@@ -5,7 +5,7 @@ class AbcPhrasesController < ApplicationController
     #TODO: createに失敗した場合はalertを出す
     @phrase = AbcPhrase.create(
                               user_id: session[:user_id],
-                              tytle: "new",
+                              title: "new",
                               meter: "4/4",
                               length: "1/8",
                               reference: "",
@@ -38,6 +38,6 @@ class AbcPhrasesController < ApplicationController
 
   private
   def abc_params
-    params.require(:abc_phrase).permit(:tytle, :meter, :length, :reference, :key, :abc)
+    params.require(:abc_phrase).permit(:title, :meter, :length, :reference, :key, :abc)
   end
 end

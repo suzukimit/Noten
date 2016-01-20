@@ -1,6 +1,6 @@
 //AbcEdit（非表示）の更新
 function updateAbcArea() {
-	var t = 'T: ' + $('#abc_phrase_tytle').val();
+	var t = 'T: ' + $('#abc_phrase_title').val();
 	var m = 'M: ' + $('#abc_phrase_meter').val();
 	var l = 'L: ' + $('#abc_phrase_length').val();
 	var r = 'R: ' + $('#abc_phrase_reference').val();
@@ -20,7 +20,7 @@ function showTopPhrase() {
 
 //イベントリスナの登録
 $(function(){
-	$('#abc_phrase_tytle, #abc_phrase_reference, #abc_phrase_abc').keyup(function() {
+	$('#abc_phrase_title, #abc_phrase_reference, #abc_phrase_abc').keyup(function() {
 		updateAbcArea();
 	});
 	$('#abc_phrase_meter, #abc_phrase_length, #abc_phrase_key').change(function() {

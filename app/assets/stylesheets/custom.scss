@@ -121,31 +121,58 @@ input {
 
 /* sidebar */
 
-aside {
+#home_aside {
+  padding-left: 0px;
+  padding-right: 0px;
+  display: table;
+  border-collapse: collapse;
+  height: 100%;
+  overflow-y: scroll;
+
   section.phrase_list {
-    margin-top: 20px;
-  }
-  section {
-    padding: 10px 0;
-    margin-top: 20px;
-    &:first-child {
-      border: 0;
-      padding-top: 0;
+
+    #phrase_list_header {
+      border: solid #B1B1B1 1px;
+      padding-top: 15px;
     }
+
     span {
       display: block;
       margin-bottom: 3px;
       line-height: 1;
+      text-align: right;
     }
+
     h1 {
       font-size: 1.4em;
-      text-align: left;
+      text-align: center;
       letter-spacing: -1px;
       margin-bottom: 3px;
       margin-top: 0px;
     }
+
+    div[id^="abc_phrase_id_"] {
+      border: solid #B1B1B1 1px;
+      display: table-row;
+      padding: 0;
+      cursor: pointer;
+    }
+    
+    div[id^="abc_phrase_id_"]:hover{
+      background-color: #E6E6FA;
+    }
+
+    #abc_list_tytle {
+      margin: 10px 0;
+    }
+
+    #abc_list_btns {
+      margin-bottom: 10px;
+    }
+
   }
 }
+
 
 /* paper */
 
@@ -154,6 +181,13 @@ aside {
 }
 
 /* edit */
+
+#abc-edit {
+  padding-top: 10px;
+  height: 100%;
+  background-color: #E6E6FA;
+  border-left: solid #B1B1B1 1px;
+}
 
 textarea.area {
   display:none;

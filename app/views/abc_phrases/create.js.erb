@@ -1,2 +1,3 @@
-$('#phrase_list').prepend('<%= j(render @phrase) %>');
+$('#phrase_list_header').after('<%= j(render @phrase) %>');
+updateListCount(1);
 showTopPhrase();

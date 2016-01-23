@@ -11,12 +11,27 @@ function updateAbcArea() {
 	$('#area').trigger('change');
 }
 
+//リストの曲数の加算・減算
+function updateListCount(diff) {
+  cntStr = $('#phrase_list_count').text().replace(" 曲", "");
+  cnt = parseInt(cntStr) + diff;
+  $('#phrase_list_count').text(cnt + " 曲");
+}
+
 //一番上の楽譜を表示させる
 //TODO 無理やりボタン押してajaxってな感じだけど、もうちょいスマートにやりたい
 function showTopPhrase() {
-  $('#phrase_list div:first a:first').click()
+  $('#phrase_list a:first').click()
 }
 
+//イベントの登録
+//TODO 絶対こんな面倒なことする必要ないと思うが・・・
+function bindEvent() {
+  $('div[id^="abc_phrase_id_"]').unbind();
+  $('div[id^="abc_phrase_id_"]').bind('click', function () {
+    $(this).prev().click();
+  });
+}
 
 //イベントリスナの登録
 $(function(){

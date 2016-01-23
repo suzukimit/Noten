@@ -1,14 +1,18 @@
 <% if logged_in? %>
   <div class="row">
-    <aside class="col-md-2">
+    <aside class="col-md-2" id="home_aside">
       <section class="phrase_list" id="phrase_list">
+        <div class="col-md-12" id="phrase_list_header">
+          <h1>楽譜リスト</h1>
+          <span id="phrase_list_count"><%= @phrases.size %> 曲</span>
+        </div>
         <%= render @phrases %>
       </section>
     </aside>
     <div class="col-md-7 bg-F7F7F7" id="abc-paper">
       <%= render 'abc_phrases/abc_paper' %>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-3", id="abc-edit">
       <%= render 'abc_phrases/abc_edit' %>
     </div>
   </div>

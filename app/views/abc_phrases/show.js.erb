@@ -10,3 +10,4 @@ $('#abc_phrase_abc')     .text('<%= j((@phrase.abc).html_safe)       %>');
 $('#new_abc_phrase').attr('action', '/abc_phrases/' + <%= @phrase.id %>);
 
 updateAbcArea();
+bindEvent();

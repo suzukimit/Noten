@@ -1,12 +1,14 @@
-<div class="col-md-12" id='abc_phrase_id_<%= abc_phrase.id %>'>
-  <div class="col-md-12">
-    <%= link_to abc_phrase.title, abc_phrase, remote: true, method: :get %>
-  </div>
-  <div class="col-md-12">
-    <%= link_to abc_phrase, method: :delete, remote: true, data: { confirm: "You sure?" } do %>
-      <%= button_tag class: "btn btn-warning" do %>
-        <span class="glyphicon glyphicon-trash"></span>
+<%= link_to abc_phrase, remote: true, method: :get do %>
+  <div class="col-md-12" id='abc_phrase_id_<%= abc_phrase.id %>'>
+      <div class="col-md-12" id="abc_list_tytle">
+        <h2 id='abc_tytle_id_<%= abc_phrase.id %>'><%= abc_phrase.title %></h2>
+      </div>
+    <div class="col-md-12" id="abc_list_btns">
+      <%= link_to abc_phrase, method: :delete, remote: true, data: { confirm: "You sure?" } do %>
+        <%= button_tag class: "btn btn-warning" do %>
+          <span class="glyphicon glyphicon-trash"></span>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
-</div>
+<% end %>

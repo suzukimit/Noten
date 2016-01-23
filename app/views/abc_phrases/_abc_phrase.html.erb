@@ -4,11 +4,31 @@
         <h2 id='abc_tytle_id_<%= abc_phrase.id %>'><%= abc_phrase.title %></h2>
       </div>
     <div class="col-md-12" id="abc_list_btns">
-      <%= link_to abc_phrase, method: :delete, remote: true, data: { confirm: "You sure?" } do %>
-        <%= button_tag class: "btn btn-warning" do %>
-          <span class="glyphicon glyphicon-trash"></span>
-        <% end %>
+
+      <%= button_tag class: "btn btn-warning", "data-toggle": "modal", "data-target": "#deleteModal_id_#{abc_phrase.id}" do %>
+        <span class="glyphicon glyphicon-trash"></span>
       <% end %>
+
+      <div id="deleteModal_id_<%= abc_phrase.id %>" class="modal fade">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title"><%= abc_phrase.title %></h4>
+                  </div>
+                  <div class="modal-body">
+										この楽譜を削除してもよいですか？
+                  </div>
+                  <div class="modal-footer">
+                      <%= button_tag "キャンセル", class: "btn btn-default", "data-dismiss": "modal" %>
+                      <%= link_to abc_phrase, method: :delete, remote: true, data: {} do %>
+                        <%= button_tag "削除", class: "btn btn-warning", "data-dismiss": "modal" %>
+                      <% end %>
+                  </div>
+              </div>
+          </div>
+      </div>
+
     </div>
   </div>
 <% end %>

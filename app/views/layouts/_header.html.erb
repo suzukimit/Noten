@@ -28,6 +28,8 @@
             <li><%= link_to "Log in", login_path %></li>
           <% end %>
         </ul>
+
+				<!-- search -->
         <%= form_tag "#", class: "navbar-form navbar-right", method: :get do %>
           <div class="form-group">
             <%= text_field_tag :q, params[:q], class: "form-control margin-bottom-0", placeholder: "keyword" %>
@@ -36,6 +38,18 @@
             <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
           <% end %>
         <% end %>
+
+				<!-- tag -->
+        <%= button_tag class: "btn btn-info navbar-btn navbar-right margin-LR-15" do %>
+          <span class="glyphicon glyphicon-tags" aria-hidden="true"></span>
+        <% end %>
+
+				<!-- book -->
+        <%= button_tag class: "btn btn-info navbar-btn navbar-right margin-R-15" do %>
+          <span class="glyphicon glyphicon-book" aria-hidden="true"></span>
+        <% end %>
+
+				<!-- plus -->
         <%= form_tag "abc_phrases", class: "navbar-form navbar-right", method: :post, remote: true do %>
           <%= button_tag class: "btn btn-info" do %>
             <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>

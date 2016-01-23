@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160120194119) do
+ActiveRecord::Schema.define(version: 20160123114043) do
 
   create_table "abc_phrases", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
@@ -27,6 +27,12 @@ ActiveRecord::Schema.define(version: 20160120194119) do
 
   add_index "abc_phrases", ["user_id", "created_at"], name: "index_abc_phrases_on_user_id_and_created_at", using: :btree
   add_index "abc_phrases", ["user_id"], name: "index_abc_phrases_on_user_id", using: :btree
+
+  create_table "tags", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name",            limit: 255

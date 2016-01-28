@@ -3,6 +3,9 @@
 
 /* universal */
 
+html {
+  height: 100%;
+}
 body {
   height: 100%;
 }
@@ -34,6 +37,13 @@ div.bg-F7F7F7 {
 button.margin-LR-15 {
   margin-left: 15px;
   margin-right: 15px;
+}
+
+hr {
+  height: 1px;
+  background-color: #C9CACA;
+  border: none;
+  color: #C9CACA;
 }
 
 button.margin-R-15 {
@@ -130,10 +140,17 @@ input {
 
 /* sidebar */
 
+div.container-fluid {
+  height: 100%;
+}
+
+div.row {
+  height: 100%;
+}
+
 #home_aside {
   padding-left: 0px;
   padding-right: 0px;
-  display: table;
   border-collapse: collapse;
   height: 100%;
   overflow-y: scroll;
@@ -162,7 +179,6 @@ input {
 
     div[id^="abc_phrase_id_"] {
       border: solid #B1B1B1 1px;
-      display: table-row;
       padding: 0;
       cursor: pointer;
     }
@@ -186,7 +202,8 @@ input {
 /* paper */
 
 #abc-paper {
-  height: 500px;
+  height: 100%;
+  overflow-y: scroll;
 }
 
 /* edit */
@@ -196,6 +213,7 @@ input {
   height: 100%;
   background-color: #E6E6FA;
   border-left: solid #B1B1B1 1px;
+  overflow-y: scroll;
 }
 
 textarea.area {

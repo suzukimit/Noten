@@ -27,28 +27,71 @@
     }
   </script>
 <% else %>
-  <div id="home-top1" class="center bg-gray">
+  <div class="center pd-120-0 top-odd">
     <%= image_tag 'logo.png' %>
     <h2>あなただけの楽譜集を作成できるサービス</h2>
     <div class="row">
       <div class="col-md-1 col-md-offset-5">
-        <%= link_to "Sign up", signup_path, class: "btn btn-lg btn-primary" %>
+        <%= link_to "ユーザー登録", signup_path, class: "btn btn-lg btn-primary" %>
       </div>
       <div class="col-md-1">
-        <%= link_to "Log in",       login_path,  class: "btn btn-lg btn-primary" %>
+        <%= link_to "ログイン",       login_path,  class: "btn btn-lg btn-primary" %>
       </div>
     </div>
   </div>
-  <!--
-  <div id="home-top2" class="center">
+  <div class="center pd-120-0 top-even">
     <div class="row">
       <div class="col-md-3 col-md-offset-3">
-        <%= image_tag 'logo.png' %>
+        <%= image_tag 'keyboard2.png', class: "keyboard"%>
+        <div class="row">
+          <span class="glyphicon glyphicon-chevron-down fa-3x" aria-hidden="true"></span>
+        </div>
+        <div class="row">
+          <span class="glyphicon glyphicon-chevron-down fa-3x" aria-hidden="true"></span>
+        </div>
+        <%= image_tag 'CDEFGAB.png', class: "img-rounded size-70per"%>
       </div>
-      <div class="col-md-3 col-md-offset-3">
-        <h2>あなただけの楽譜集を作成できるサービス</h2>
+      <div class="col-md-3">
+        <h3>ABC記譜法による自由度の高い入力方法</h3>
+        <p><a href="https://ja.wikipedia.org/wiki/ABC%E8%A8%98%E8%AD%9C%E6%B3%95" target="_blank">ABC記譜法</a>では、入力された文字を変換して自在に楽譜を表現できます。例えば、「C」の音はそのまま「C」を入力すればOK。休符は「z」、小節線は「|」など、簡単なルールを覚えるだけで驚くほど自由自在に楽譜を作成できます。</p>
+        <p>記号を覚えるのが大変！という方のために、ボタンクリックによる入力補助機能など、便利な機能を随時開発中です！</p>
       </div>
     </div>
   </div>
-  -->
+  <div class="center pd-120-0 top-odd">
+    <div class="row">
+      <div class="col-md-3 col-md-offset-3">
+        <h3>タブやノートブックで簡単管理</h3>
+        <p>紙の楽譜をたくさん保持していると、ゴチャゴチャして何がどこにあったか分からなくなってしまいがち。Notenでは楽譜にタグを貼り付けたり、ノートブックの中に楽譜をまとめることで、簡単に整理整頓できます。また、検索ですぐに一覧を絞れるので、必要な楽譜を即座に呼び出せます。</p>
+      </div>
+      <div class="col-md-3 col-md-offset-1">
+        <div class="tag-circle">
+          <div class="tag-pd-top">
+            <%= image_tag 'tag.png' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="center pd-120-0 top-even">
+    <div class="row">
+      <div class="col-md-3 col-md-offset-3">
+        <div class="tablet-circle">
+          <div class="tablet-pd-top">
+            <%= image_tag 'tablet.png' %>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <h3>タブレットで、スマートフォンで、楽譜をいつでもどこでも持ち歩こう</h3>
+        <p>作成した楽譜は様々な端末上で見ることができます。タブレットを譜面台の上に置けば準備完了。あなたの作った楽譜を簡単に呼び出せます。日々の練習や、実際の音楽現場で是非お利用下さい。</p>
+      </div>      
+    </div>
+  </div>    
+  <div class="row center pd-120-0">
+    <%= link_to "ユーザー登録", signup_path, class: "btn btn-lg btn-primary" %>
+  </div>
+  <div class="center">
+    <p>©2016 Noten ALL RIGHTS RESERVED</p>
+  </div>
 <% end %>

@@ -27,9 +27,28 @@
     }
   </script>
 <% else %>
-  <div class="center jumbotron">
-    <h1>Welcome to the Noten</h1>
-
-    <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+  <div id="home-top1" class="center bg-gray">
+    <%= image_tag 'logo.png' %>
+    <h2>あなただけの楽譜集を作成できるサービス</h2>
+    <div class="row">
+      <div class="col-md-1 col-md-offset-5">
+        <%= link_to "Sign up", signup_path, class: "btn btn-lg btn-primary" %>
+      </div>
+      <div class="col-md-1">
+        <%= link_to "Log in",       login_path,  class: "btn btn-lg btn-primary" %>
+      </div>
+    </div>
   </div>
+  <!--
+  <div id="home-top2" class="center">
+    <div class="row">
+      <div class="col-md-3 col-md-offset-3">
+        <%= image_tag 'logo.png' %>
+      </div>
+      <div class="col-md-3 col-md-offset-3">
+        <h2>あなただけの楽譜集を作成できるサービス</h2>
+      </div>
+    </div>
+  </div>
+  -->
 <% end %>

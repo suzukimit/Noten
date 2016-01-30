@@ -51,7 +51,7 @@
                         <h4 class="modal-title">タグ検索</h4>
                     </div>
                     <div class="modal-body">
-                      <% if @tags.empty? %>
+                      <% if @tags.nil? || @tags.empty? %>
                         <p>登録されているタグがありません。</p>
                       <% else %>
                         <% @tags.each do |tag| %>

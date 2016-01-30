@@ -3,26 +3,29 @@
 <%= form_for(@phrase) do |f| %>
   <span class="glyphicon glyphicon-tags" aria-hidden="true"></span>
 
+  <div id="tags">
+  </div>
+
   <hr>
 
   <%= render 'shared/error_messages', object: f.object %>
 
-  <%= f.label :title %>
+  <%= f.label :title, "曲名" %>
   <%= f.text_field :title, class: 'form-control' %>
 
-  <%= f.label :meter %>
+  <%= f.label :meter, "拍子" %>
   <%= f.select :meter, [], {}, { class: 'form-control' } %>
 
-  <%= f.label :length %>
+  <%= f.label :length, "音符長" %>
   <%= f.select :length, [], {}, { class: 'form-control' } %>
 
-  <%= f.label :reference %>
+  <%= f.label :reference, "作曲者" %>
   <%= f.text_field :reference, class: 'form-control' %>
 
-  <%= f.label :key %>
+  <%= f.label :key, "キー" %>
   <%= f.select :key, [], {}, { class: 'form-control' } %>
 
-  <%= f.label :abc, "ABC" %>
+  <%= f.label :abc, "ABC譜" %>
   <%= f.text_area :abc, rows: "8", cols: "80", class: "form-control" %>
 
   <%= f.submit "Save", class: "btn btn-large btn-primary" %>

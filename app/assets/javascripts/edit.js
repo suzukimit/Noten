@@ -3,7 +3,7 @@ function updateAbcArea() {
 	var t = 'T: ' + $('#abc_phrase_title').val();
 	var m = 'M: ' + $('#abc_phrase_meter').val();
 	var l = 'L: ' + $('#abc_phrase_length').val();
-	var r = 'R: ' + $('#abc_phrase_reference').val();
+	var r = 'C: ' + $('#abc_phrase_reference').val();
 	var k = 'K: ' + $('#abc_phrase_key').val();
 	var abc = $('#abc_phrase_abc').val();
 	var abcText = 'X: 1' + '\n' + t + '\n' + m + '\n' + l + '\n' + r + '\n' + k + '\n' + abc;

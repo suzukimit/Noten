@@ -1,3 +1,9 @@
+//init tags
+$('#tags').empty();
+<% @phrase.tags.each do |tag| %>
+  $('#tags').prepend('<%= j(render tag) %>');
+<% end %>
+
 //init edit form
 $('#abc_phrase_title')    .val('<%= j((@phrase.title).html_safe)     %>');
 $('#abc_phrase_meter')    .val('<%= j((@phrase.meter).html_safe)     %>');

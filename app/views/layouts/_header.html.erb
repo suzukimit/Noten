@@ -51,7 +51,13 @@
                         <h4 class="modal-title">タグ検索</h4>
                     </div>
                     <div class="modal-body">
-                      登録されているタグがありません。
+                      <% if @tags.empty? %>
+                        <p>登録されているタグがありません。</p>
+                      <% else %>
+                        <% @tags.each do |tag| %>
+                          <%= check_box_tag 'aaa' %><%= label_tag 'aaa', tag.name %>
+                        <% end %>
+                      <% end %>
                     </div>
                     <div class="modal-footer">
                         <%= button_tag "キャンセル", class: "btn btn-default", "data-dismiss": "modal" %>

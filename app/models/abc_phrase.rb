@@ -7,4 +7,8 @@ class AbcPhrase < ActiveRecord::Base
   validates :reference,                 length: {maximum: 200}
   validates :key,       presence: true
   validates :abc,       presence: true, length: {maximum: 10000}
+  has_many :abc_phrases_tags, class_name: "AbcPhrasesTag", 
+                              foreign_key: "abc_phrase_id", 
+                              dependent: :destroy
+  has_many :tags, through: :abc_phrases_tags, source: :tag
 end

@@ -75,7 +75,7 @@
         <% end %>
 
 				<!-- plus -->
-        <%= form_tag "abc_phrases", class: "navbar-form navbar-right", method: :post, remote: true do %>
+        <%= form_tag "abc_phrases", class: "navbar-form navbar-right", method: :post, remote: true, format: :js do %>
           <%= button_tag class: "btn btn-info" do %>
             <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
           <% end %>

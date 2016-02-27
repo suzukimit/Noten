@@ -1,17 +1,32 @@
 class AbcPhrasesController < ApplicationController
   before_action :reject_not_logged_in_user
 
+  # POST abc_phrases
   def create
-    #TODO: createに失敗した場合はalertを出す
-    @phrase = AbcPhrase.create(
-                              user_id: session[:user_id],
-                              title: "new",
-                              meter: "4/4",
-                              length: "1/8",
-                              reference: "",
-                              key: "C",
-                              abc: "c"
-                              )
+    respond_to do |format|
+      # 0件の状態でsaveした場合
+      format.html {
+        @phrase  = current_user.abc_phrases.build(abc_params)
+        if @phrase.save
+          redirect_to root_url
+        else
+          @phrases  = AbcPhrase.where(user_id: current_user).order(updated_at: :desc)
+          render 'static_pages/home'
+        end
+      }
+      # plusボタンでajaxで追加する場合
+      format.js {
+        @phrase = AbcPhrase.create(
+                                  user_id: session[:user_id],
+                                  title: "new",
+                                  meter: "4/4",
+                                  length: "1/8",
+                                  reference: "",
+                                  key: "C",
+                                  abc: "c"
+                                  )
+      }
+    end
   end
 
   def update

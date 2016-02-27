@@ -2,5 +2,5 @@
   <%= f.fields_for :tags do |tf| %>
 		<%= render partial: "tag_form_inner", locals: {f: tf } %>
   <% end %>
-  <%= link_to_add_tag("tag add", f, :tags, {}) %>
+  <%= link_to_add_tag("タグ追加", f, :tags, {}) %>
 <% end %>

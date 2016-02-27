@@ -11,5 +11,5 @@ class AbcPhrase < ActiveRecord::Base
                               foreign_key: "abc_phrase_id", 
                               dependent: :destroy
   has_many :tags, through: :abc_phrases_tags, source: :tag
-  accepts_nested_attributes_for :tags
+  accepts_nested_attributes_for :tags, allow_destroy: true
 end

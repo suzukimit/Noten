@@ -36,8 +36,40 @@ class AbcPhrasesController < ApplicationController
     @phrase.destroy
   end
 
-  private
-  def abc_params
-    params.require(:abc_phrase).permit(:title, :meter, :length, :reference, :key, :abc)
+  # GET abc_phrases/tag_search
+  def tag_search
+    @phrase  = current_user.abc_phrases.build
+    @phrases = AbcPhrase.where(user_id: current_user).joins(:tags).where("tags.id in (?) ", tag_params).order(updated_at: :desc).uniq
+    @tags = SortedSet.new
+
+		# TODO 本当はinner join×2 or ユーザーIDをDB定義に追加して取得したいが、時間がないので以下で回避
+		phrases_all = AbcPhrase.where(user_id: current_user)
+    phrases_all.each do |p|
+      p.tags.each do |tag|
+        @tags.add(tag)
+      end
+    end
+    @tags.sort
   end
+
+  private
+
+  def abc_params
+    params.require(:abc_phrase).permit(
+			:title,
+			:meter,
+			:length,
+			:reference,
+			:key,
+			:abc,
+			:_destroy,
+			tags_attributes: [:id, :name, :_destroy]
+		)
+  end
+
+  def tag_params
+		return nil if params[:abc_phrase].nil?
+		params[:abc_phrase][:tag]
+  end
+
 end

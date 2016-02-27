@@ -1,0 +1,6 @@
+<%= form_for(@phrase) do |f| %>
+  <%= f.fields_for :tags do |tf| %>
+		<%= render partial: "tag_form_inner", locals: {f: tf } %>
+  <% end %>
+  <%= link_to_add_tag("tag add", f, :tags, {}) %>
+<% end %>

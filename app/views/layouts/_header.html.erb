@@ -50,19 +50,21 @@
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         <h4 class="modal-title">タグ検索</h4>
                     </div>
-                    <div class="modal-body">
-                      <% if @tags.nil? || @tags.empty? %>
-                        <p>登録されているタグがありません。</p>
-                      <% else %>
-                        <% @tags.each do |tag| %>
-                          <%= check_box_tag 'aaa' %><%= label_tag 'aaa', tag.name %>
+                    <%= form_for(:abc_phrase, url: tag_search_abc_phrase_path, method: :get) do |f| %>
+                      <div class="modal-body">
+                        <% if @tags.nil? || @tags.empty? %>
+                          <p>登録されているタグがありません。</p>
+                        <% else %>
+                          <% @tags.each do |tag| %>
+                            <%= f.check_box :tag, {multiple: true}, tag.id, nil %><%= label_tag :tag, tag.name %>
+                          <% end %>
                         <% end %>
-                      <% end %>
-                    </div>
-                    <div class="modal-footer">
+                      </div>
+                      <div class="modal-footer">
                         <%= button_tag "キャンセル", class: "btn btn-default", "data-dismiss": "modal" %>
-                        <%= button_tag "検索", class: "btn btn-info", "data-dismiss": "modal" %>
-                    </div>
+                        <%= f.submit "検索", class: "btn btn-info" %>
+                      </div>
+                    <% end %>
                 </div>
             </div>
         </div>

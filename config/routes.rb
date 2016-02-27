@@ -13,4 +13,7 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :abc_phrases, only: [:show, :create, :update, :destroy]
+  resource :abc_phrase do
+    get 'tag_search'
+  end
 end

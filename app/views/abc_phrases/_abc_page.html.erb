@@ -1,0 +1,19 @@
+<div class="row">
+  <%= render 'abc_phrases/abc_list' %>
+  <div class="col-md-7 bg-F7F7F7" id="abc-paper">
+    <%= render 'abc_phrases/abc_paper' %>
+  </div>
+  <div class="col-md-3", id="abc-edit">
+    <%= render 'abc_phrases/abc_edit' %>
+  </div>
+</div>
+<script>initMeter("");</script>
+<script>initLength("");</script>
+<script>initKey("");</script>
+<script>updateAbcArea()</script>
+<script>showTopPhrase()</script>
+<script type="text/javascript">
+  window.onload = function() {
+    abc_editor = new ABCJS.Editor("area", { paper_id: "paper0", warnings_id:"warnings" });
+  }
+</script>

@@ -2,6 +2,7 @@ class StaticPagesController < ApplicationController
   def home
     return if !logged_in?
     @phrase  = current_user.abc_phrases.build
+    @phrase.tags.build
     @phrases = AbcPhrase.where(user_id: current_user).order(updated_at: :desc)
     @tags = SortedSet.new
     @phrases.each do |p|

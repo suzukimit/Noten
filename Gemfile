@@ -52,3 +52,5 @@ gem 'abcjs-rails'
 gem 'font-awesome-rails'
 gem 'mysql2'
 gem 'pry-byebug', group: :development
+
+gem 'google-analytics-rails'

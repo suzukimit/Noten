@@ -5,7 +5,7 @@
       </div>
     <div class="col-md-12" id="abc_list_btns">
 
-      <%= button_tag class: "btn btn-warning", "data-toggle": "modal", "data-target": "#deleteModal_id_#{abc_phrase.id}" do %>
+      <%= button_tag class: "btn btn-warning", "data-tooltip": "tooltip", "data-placement": "bottom", "title": "楽譜を削除します", "data-toggle": "modal", "data-target": "#deleteModal_id_#{abc_phrase.id}" do %>
         <span class="glyphicon glyphicon-trash"></span>
       <% end %>
 

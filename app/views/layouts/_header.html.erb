@@ -40,7 +40,7 @@
         <% end %>
 
 				<!-- tag -->
-        <%= button_tag class: "btn btn-info navbar-btn navbar-right margin-LR-15", "data-toggle": "modal", "data-target": "#tagModal" do %>
+        <%= button_tag class: "btn btn-info navbar-btn navbar-right margin-LR-15", "data-tooltip": "tooltip", "data-placement": "bottom", "title": "タグ検索を行います", "data-toggle": "modal", "data-target": "#tagModal" do %>
           <span class="glyphicon glyphicon-tags" aria-hidden="true"></span>
         <% end %>
         <div id="tagModal" class="modal fade">
@@ -76,7 +76,7 @@
 
 				<!-- plus -->
         <%= form_tag "abc_phrases", class: "navbar-form navbar-right", method: :post, remote: true, format: :js do %>
-          <%= button_tag class: "btn btn-info" do %>
+          <%= button_tag class: "btn btn-info", "data-tooltip": "tooltip", "data-placement": "bottom", "title": "新しい楽譜を追加します" do %>
             <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
           <% end %>
         <% end %>

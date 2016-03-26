@@ -9,3 +9,5 @@ $(document).on 'ready page:load', ->
     $(this).prev('input[name*=_destroy]').val('true')
     $(this).closest('div').hide()
     event.preventDefault()
+
+  $('[data-tooltip="tooltip"]').tooltip();

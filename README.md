@@ -1,2 +1,3 @@
-# phrase
-"phrase" is a software for create musical note.
+# Noten
+"Noten" is a software for create musical note.
+noten.herokuapp.com
